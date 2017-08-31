@@ -1,0 +1,9 @@
+site,sp.rich,productivity,continent
+swamp,10,0.25,Asia
+swamp,5,0.11,Europe
+forest,1000,1.99,Asia
+forest,500,1.5,Europe
+desert,2,0.11,Asia
+desert,5,0.05,Europe
+grassland,10,1.25,Asia
+grassland,25,1,Europe

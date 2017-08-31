@@ -10,7 +10,7 @@
 getwd()
 
 #set your working directory or use drop down
-#setwd("/Users/nateswenson/GitHub")
+setwd("/Users/ngswenson/GitHub")
 
 #see change
 getwd()
@@ -56,7 +56,7 @@ tot.rain.new = tot.rain+22.1
 tot.rain.new
 
 #case matters
-Tot.rain+22.1
+#Tot.rain+22.1
 
 #make a new rainfall object
 tot.rain.2 = 22.1
@@ -73,15 +73,15 @@ tot.rain.2 == 22.2
 tot.rain.2 != 22.2
 
 #add objects
-tot.rain + tot.rain2 
+tot.rain + tot.rain.2 
 
 #concatenate components of objects
-all.rain.data = c(tot.rain, tot.rain2)
+all.rain.data = c(tot.rain, tot.rain.2)
 
 #lets generate 40 random numbers from a normal distribution with an expected mean of 0 and sd of 1
 random.data.1 = rnorm(40, mean = 0, sd = 1)
 
-random.data
+random.data.1
 
 # a second random dataset
 random.data.2 = rnorm(40, mean = 0, sd = 1)
@@ -126,6 +126,7 @@ plot(random.data.1 ~ random.data.2, col="red", pch =21, bg="blue", xlab="rainfal
 ################################
 ## Reading in txt or csv files
 ################################
+setwd("/Users/ngswenson/GitHub/Swenson709Bfall2017/Homework.1")
 #read in example csv file using read.table command
 my.prod.dat = read.table("my.prod.data.csv",sep=",",header=T)
 
