@@ -3,7 +3,7 @@
 #Nate Swenson - swenson@umd.edu
 #31-aug-2017
 
-################################
+
 ##working.directories
 ################################
 #find out what your working directory is
