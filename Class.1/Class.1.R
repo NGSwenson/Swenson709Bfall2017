@@ -4,7 +4,7 @@
 #31-aug-2017
 
 ################################
-## working directories
+##working.directories
 ################################
 #find out what your working directory is
 getwd()
