@@ -1,0 +1,19 @@
+# Biol 709B Homework 1
+# Due 5 Sept @ midnight
+
+# Basics
+1) Read in the example dataset, plot the data in a way (or in ways) that you think are useful. Save plots as PDFs and submit. Show your work!
+2) Add a random number to each value in column 1 in the example dataset, write the data table out as a csv file and submit. Show your work!
+3) Calculate a Pearson's correlation coefficient between columns 1 and 2 and columns 1 and 3. Put the results into a matrix, write to csv file and submit. Show your work!
+4) Repeat step 3, but this time correlate columns 1 and 2, but correlating row 1 to 10 in column 1 with rows 10 to 1 in column 2. Put the results into a matrix, write to csv file and submit. Show your work!
+5) Make a fake dataset with 3 columns and 20 rows. The first 2 columns are random numbers. The last column is filled with letters (use only A,B,C,D). Then run an ANOVA using the first column and then again with the second. Put the relevant results into a matrix, write to csv file and submit. Show your work!
+
+
+# Writing some code
+1) Write a function called "fun.1" that simply prints out what you give it.
+2) Write a function called "fun.2" that prints out a number that is 7 more than the number you gave it
+3) Write a function called "fun.3" that does exactly what was done in "fun.2", but repeats it 10 times
+4) Write a function called "fun.4" that takes a vector of numbers, randomly samples without replacement 3 values from the vector and prints them out
+5) Write a function called "fun.5" that does exactly what was done in "fun.3", but repeats it 4 times
+6) Write a function called "fun.6" that performs a linear regression and reports the model parameters and r^2 value. Use data you made with problem 5 in "basics" above and compare your results to those from the lm() function.
+

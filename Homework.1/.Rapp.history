@@ -1,0 +1,26 @@
+671*3
+3536/2
+require(MASS)#
+out <- mvrnorm(50, mu = c(0,0), Sigma = matrix(c(1,0.56,0.56,1), ncol = 2),#
+               empirical = TRUE)
+out
+matrix(c(1,0.56,.10, .10, 0.56,1), ncol = 3)
+matrix(c(1,0.56,.10,  .56,1, .10, .10,    0.56,1), ncol = 3,nrow=3)
+matrix(c(1,0.56,.10,  .56,1, .10, .56,    0.56,1), ncol = 3,nrow=3)
+matrix(c(1,0.56,.10,  .56,1, .56, .10,    0.56,1), ncol = 3,nrow=3)
+require(MASS)#
+out <- mvrnorm(50, mu = c(0,0), Sigma = matrix(c(1,0.56,.10,  .56,1, .56, .10,    0.56,1), ncol = 3,nrow=3),#
+               empirical = TRUE)
+require(MASS)#
+out <- mvrnorm(50, mu = c(0,0), Sigma = matrix(c(1,0.56,0.56,1), ncol = 2),#
+               empirical = TRUE)
+require(MASS)#
+out2 <- mvrnorm(50, mu = c(0,0), Sigma = matrix(c(1,0.56,0.56,1), ncol = 2),#
+               empirical = TRUE)
+out3 = cbind(out,out2[,1])
+head(out3)
+plot(out3[,1],out3[,2])
+plot(out3[,1],out3[,3])
+colnames(out3)=c("variable.1","variable.2","variable.3")
+head(out3)
+write.table(out3, "HW.1.data.csv",sep=",",row.names=F,col.names=T,quote=F)
