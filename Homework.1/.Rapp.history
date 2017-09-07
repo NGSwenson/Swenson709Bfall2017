@@ -1,0 +1,235 @@
+671*3
+3536/2
+version()
+?version()
+R.version
+getwd()
+setwd("/Users/ngswenson/GitHub")
+getwd()
+setwd("/Users/ngswenson/GitHub")
+getwd()
+getwd()
+list.files(getwd())
+list.files("/Users/ngswenson/GitHub")
+#addition#
+15+2
+15-2
+15*2
+15/2
+exp(2)
+log(2)
+log(2,base=10)
+pi
+PCA()
+pca()
+??PCA
+?princomp
+tot.rain = 50.2
+tot.rain
+tot.rain+22.1
+tot.rain*22.1
+tot.rain.new = tot.rain+22.1
+tot.rain.new
+Tot.rain+22.1
+tot.rain.2 = 22.1
+tot.rain
+tot.rain.2
+tot.rain.2 <- 22.1
+tot.rain.2
+tot.rain = "A"
+tot.rain
+tot.rain = 50.2
+tot.rain
+tot.rain.2 == 22.1
+tot.rain.2
+tot.rain.2 == 22.2
+tot.rain.2 != 22.1
+tot.rain.2 != 22.2
+tot.rain + tot.rain.2
+tmp = tot.rain + tot.rain.2
+tmp
+tot.rain
+tot.rain.2
+all.rain.data = c(tot.rain, tot.rain.2)
+all.rain.data
+is.vector(all.rain.data)
+is.matrix(all.matrix.data)
+is.matrix(all.rain.data)
+length(all.rain.data)
+all.rain.data[2]
+all.rain.data[2] = "NA"
+all.rain.data
+all.rain.data = c(tot.rain, tot.rain.2)
+all.rain.data[2] = 99
+all.rain.data
+random.data.1 = rnorm(40, mean = 0, sd = 1)
+random.data.1
+random.data.2 = rnorm(40, mean = 0, sd = 1)
+random.data.2
+length(random.data.1)
+ls()
+ls()
+objects()
+rm(tot.rain)
+ls()
+hist(random.data.1)
+hist(random.data.2)
+?plot(random.data.1, random.data.2)
+plot(random.data.1, random.data.2)
+plot(random.data.1 ~ random.data.2)
+plot(random.data.1 ~ random.data.2, col="red")
+plot(random.data.1 ~ random.data.2, col="red", pch =17)
+?plot
+#change pch here to fill in symbol with a background of blue#
+plot(random.data.1 ~ random.data.2, col="red", pch =21, bg="blue")
+#change pch here to fill in symbol with a background of blue#
+plot(random.data.1 ~ random.data.2, col="red", pch =21, bg="blue",cex=5)
+plot(random.data.1 ~ random.data.2, col="red")
+#plot data with blue background and x and y labels (xlab and ylab)#
+plot(random.data.1 ~ random.data.2, col="red", pch =21, bg="blue", xlab="rainfall", ylab="temperature")
+#plot data with blue background and x and y labels (xlab and ylab)#
+plot(random.data.1 ~ random.data.2, col="red", pch =21, bg="blue", xlab="rainfall", ylab="temperature (celsius)")
+setwd("/Users/ngswenson/GitHub/Swenson709Bfall2017/Homework.1")
+list.files()
+my.prod.dat = read.table("my.prod.data.csv",sep=",",header=T)
+my.prod.dat.alt = read.csv("my.prod.data.csv")
+my.prod.dat
+my.prod.dat.alt
+?read.csv
+my.prod.dat.alt = read.csv("my.prod.data2.txt")
+my.prod.data.alt
+my.prod.dat.alt
+#read in example csv txt using read.table command#
+my.prod.dat.txt =read.table("my.prod.data.txt",sep="\t",header=T)
+#read in example csv txt using read.table command#
+my.prod.dat.txt =read.table(header=T,"my.prod.data.txt",sep="\t")
+my.prod.dat
+#################################
+#look at first 6 values of object#
+head(my.prod.dat)
+my.prod.dat[1:4,1:4]
+tail(my.prod.dat)
+nrow(my.prod.dat)
+ncol(my.prod.dat)
+dim(my.prod.dat)
+dim(tot.rain)
+dim(tot.rain.2)
+is.matrix(my.prod.dat)
+is.data.frame(my.prod.dat)
+my.prod.dat[,2]
+my.prod.dat[3,]
+my.prod.dat[3,2]
+my.prod.dat[3,2:4]
+my.prod.dat
+my.prod.dat$continent=="Asia"
+my.prod.dat[my.prod.dat$continent=="Asia",]
+my.prod.dat[my.prod.dat$continent=="Europe",]
+my.prod.dat[my.prod.dat$productivity>=.1,]
+my.prod.dat[my.prod.dat$productivity>=1,]
+my.prod.dat[1.9>=my.prod.dat$productivity>=1,]
+subset(my.prod.dat, my.prod.dat$continent=="Asia")
+subset(my.prod.dat, my.prod.dat[,4]=="Asia")
+subset(my.prod.dat, my.prod.dat$site == "forest")
+#look at the structure of an object#
+str(my.prod.dat)
+my.prod.dat
+sum(my.prod.dat[,2])
+my.prod.dat
+mean(my.prod.dat[,2])
+sd(my.prod.dat[,2])#
+var(my.prod.dat[,2])
+my.prod.dat[,2]
+boxplot(log(my.prod.dat[,2])~my.prod.dat[,1])
+#plot a biplot of data logging column 2 while coloring points based on column 4#
+plot(my.prod.dat[,3]~log(my.prod.dat[,2]),pch=21,bg=my.prod.dat[,4])
+par(mfrow = c(1,3))
+boxplot(log(my.prod.dat[,2])~my.prod.dat[,1])#
+plot(my.prod.dat[,3]~log(my.prod.dat[,2]))#
+plot(my.prod.dat[,3]~log(my.prod.dat[,2]),pch=21,bg=my.prod.dat[,4])
+plot(my.prod.dat[,3]~log(my.prod.dat[,2]))
+plot(my.prod.dat[,3]~log(my.prod.dat[,2]),cex=5)
+points(4,1,col="red")
+plot(my.prod.dat[,3]~log(my.prod.dat[,2]),cex=5,xlim=c(0,10), ylim=c(0,10))
+par(new=T)
+plot(my.prod.dat[,3]+1~log(my.prod.dat[,2]),col="blue",cex=5)
+plot(my.prod.dat[,3]~log(my.prod.dat[,2]),pch=21,bg=my.prod.dat[,4])
+plot(my.prod.dat[,3]~log(my.prod.dat[,2]),pch=21,bg=my.prod.dat[,4],cex=8)
+plot(my.prod.dat[,3]~log(my.prod.dat[,2]),pch=21,bg=my.prod.dat[,1])
+plot(my.prod.dat[,3]~log(my.prod.dat[,2]),pch=21,bg=my.prod.dat[,1],cex=7)
+my.next.prod.dat = data.frame(site = c("swamp","swamp","forest","forest","desert","desert","grassland","grassland"), sp.rich = c(10,5,1000,500,2,5,10,25), productivity = c(0.25,.11,1.99,1.5, 0.11,.05, 1.25,1.00), continent=c("Asia","Europe","Asia","Europe","Asia","Europe","Asia","Europe"))
+my.next.prod.dat
+1:7
+c(1:7)
+series.mat = c(1:7)
+series.mat
+length(series.mat)
+empty.vec = rep(NA,6)
+empty.vec
+matrix(1:11,nrow=3)
+matrix(1:12,nrow=3)
+transposed.mat = t(matrix(1:12,nrow=3))
+transposed.mat
+sum(transposed.mat[,1])
+colSums(transposed.mat)
+rowSums(transposed.mat)
+lm(my.prod.dat$productivity ~ log(my.prod.dat$sp.rich))
+summary(lm(my.prod.dat$productivity ~ log(my.prod.dat$sp.rich)))
+mod.output = summary(lm(my.prod.dat$productivity ~ log(my.prod.dat$sp.rich)))
+mod.output
+names(mod.output)
+mod.output$r.squared
+mod.output$coefficients
+dim(mod.output$coefficients)
+mod.output$coefficients[,1]
+mod.output$coefficients[,1][2]
+summary(aov(my.prod.dat$productivity ~ my.prod.dat$continent))
+summary(aov(my.prod.dat$productivity ~ my.prod.dat$site))
+TukeyHSD(aov(my.prod.dat$productivity ~ my.prod.dat$site))
+names(TukeyHSD(aov(my.prod.dat$productivity ~ my.prod.dat$site)))
+TukeyHSD(aov(my.prod.dat$productivity ~ my.prod.dat$site))$my.prod.dat$site
+TukeyHSD(aov(my.prod.dat$productivity ~ my.prod.dat$site))$my.prod.dat$site
+TukeyHSD(aov(my.prod.dat$productivity ~ my.prod.dat$site))$'my.prod.dat$site'
+my.prod.dat#
+my.prod.dat[my.prod.dat$continent=="Asia","productivity"]#
+my.prod.dat[my.prod.dat$continent=="Europe","productivity"]
+t.test(my.prod.dat[my.prod.dat$continent=="Asia","productivity"],my.prod.dat[my.prod.dat$continent=="Europe","productivity"])
+?t.test
+t.test(my.prod.dat[my.prod.dat$continent=="Asia","productivity"],my.prod.dat[my.prod.dat$continent=="Europe","productivity"],paired=T)
+names(t.test(my.prod.dat[my.prod.dat$continent=="Asia","productivity"],my.prod.dat[my.prod.dat$continent=="Europe","productivity"],paired=T))
+empty.vec
+for(i in 1:3){ #
+	empty.vec[i] = i+1#
+}
+empty.vec
+for(i in 1:6){ #
+	empty.vec[i] = i+1#
+}
+empty.vec
+for(i in 1:7){ #
+	empty.vec[i] = i+1#
+}
+empty.vec
+for(i in 1:3){ date()#
+	empty.vec[i] = i+1#
+}
+for(i in 1:3){ print(date())#
+	empty.vec[i] = i+1#
+}
+for(i in 1:3){ print(date()); print(i)#
+	empty.vec[i] = i+1#
+}
+my.func = function(x){#
+	my.output = x+10#
+	return(my.output)#
+}
+ls()
+my.func
+my.func(12)
+my.func(c(1:12))
+for(i in 1:3){ #
+	print(my.func(i))#
+}
+for(i in 1:3000){ #
+	print(my.func(i))#
+}
+lm

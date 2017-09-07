@@ -267,12 +267,14 @@ t.test(my.prod.dat[my.prod.dat$continent=="Asia","productivity"],my.prod.dat[my.
 #look at the empty vector we made
 empty.vec
 
-for(i in 1:3){ 
+for(i in 1:3){ print(date())
 	empty.vec[i] = i+1
 }
 
 #what changed and why
 empty.vec
+
+
 
 ################################
 ## Write a function
@@ -291,6 +293,16 @@ my.func(c(1:12))
 
 
 
+
+
+
+
+
+
+
+for(i in 1:3){ 
+	print(my.func(i))
+}
 
 
 
