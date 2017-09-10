@@ -1,3 +1,6 @@
+# Biol 709B Homework 1
+# Due 13 Sept @ midnight
+
 Question 1: Please comment this function. IE for each line insert a line above it starting with # and say what you think the next line of code does
 
 hw.funk = function(x){
