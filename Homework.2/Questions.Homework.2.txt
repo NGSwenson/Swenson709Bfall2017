@@ -1,0 +1,46 @@
+Question 1: Please comment this function. IE for each line insert a line above it starting with # and say what you think the next line of code does
+
+hw.funk = function(x){
+
+print(paste("Hello World", x, sep=" "))
+
+}
+
+
+Question 2: Please comment this function. IE for each line insert a line above it starting with # and say what you think the next line of code does
+
+sm.funky = function(x){
+
+	if(is.numeric(x)){
+	replicate(x, "You are awesome!")
+	}
+
+	else{
+		print("I need a numeric input")
+	}
+}
+
+
+Question 3: Please comment this function. IE for each line insert a line above it starting with # and say what you think the next line of code does
+
+test.function = function(x){
+
+	if(is.numeric(x) && x > 1){
+		x = round(x)
+		set.seed(x)
+		tmp = matrix(c(replicate(x,rnorm(1))),nrow=x)
+		tmp2 = tmp %*% t(tmp)
+		return(tmp2)
+	}
+	else{
+	print("I need a numeric input")
+	}
+	
+}
+
+
+Question 4: 
+a) Program and Run a Lotka-Volterra Predator-Prey function in R. Use the first two equations in this webpage for guidance: https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations
+b) run the model and plot the population sizes through time and against each other on an xy plot using arrows() function.
+
+

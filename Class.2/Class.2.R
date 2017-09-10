@@ -291,15 +291,15 @@ log.growth(2, 0.5, 100, 40)
 plot(1:40, log.growth(2, 0.5, 100, 40))
 
 #run three different models plotting the first and then putting on the plot the other two using the points() function
-plot(1:40, log.growth(2, 0.5, 100, 40), ylim=c(0,100))
-points(1:40, log.growth(2, 1.5, 100, 40), col="red")
-points(1:40, log.growth(2, 2.5, 100, 40), col="blue")
+plot(1:40, log.growth(2, 0.5, 100, 40), ylim=c(0,100),cex=5)
+points(1:40, log.growth(2, 1.5, 100, 40), col="red",cex=5)
+points(1:40, log.growth(2, 2.5, 100, 40), col="blue",cex=5)
 
 
 #same plot except change the y axis limits to see all points
-plot(1:40, log.growth(2, 0.5, 100, 40), ylim=c(0,200))
-points(1:40, log.growth(2, 1.5, 100, 40), col="red")
-points(1:40, log.growth(2, 2.5, 100, 40), col="blue")
+plot(1:40, log.growth(2, 0.5, 100, 40), ylim=c(0,200),cex=5)
+points(1:40, log.growth(2, 1.5, 100, 40), col="red",cex=5)
+points(1:40, log.growth(2, 2.5, 100, 40), col="blue",cex=5)
 
 
 #plot the data using type "l" for line and then the lines() function
@@ -482,7 +482,7 @@ lv.funk.con = function(t,n, parms){
 parms = c(r1=1, r2=0.1, a11=0.2, a21=0.1, a22=0.02, a12 = 0.1)
 initialN = c(2,1)
 output = ode(y = initialN, times=1:100, func = lv.funk.con, parms = parms)
-matplot(output[,1],output[,-1], type="l)
+matplot(output[,1],output[,-1], type="l")
 
 
 
