@@ -3,10 +3,11 @@
 #Nate Swenson - swenson@umd.edu
 #14-sept-2017
 
-#install.packages(c("vegan","plyr","picante","untb"))
+#install.packages(c("vegan","plyr","picante","untb","reshape2"))
 library(vegan)
 library(plyr)
 library(picante)
+library(reshape2)
 
 cdm = read.csv("example.com.data.csv",row.names=1)
 cdm = as.matrix(cdm)
