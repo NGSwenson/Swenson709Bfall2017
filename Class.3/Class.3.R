@@ -9,7 +9,7 @@ library(plyr)
 library(picante)
 library(reshape2)
 
-cdm = read.csv("example.com.data.csv",row.names=1)
+cdm = read.csv("example.com.data2.csv",row.names=1)
 cdm = as.matrix(cdm)
 
 #calculate total number of individuals per community (assumes values in cells are counts of individuals). If relative abundance data, then sums to 1.
