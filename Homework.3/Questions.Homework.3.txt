@@ -1,0 +1,14 @@
+# Biol 709B Homework 3
+# Due 20 Sept @ midnight
+
+# USE the untb simulation output from class Thursday.
+
+
+
+1. Compile the population sizes through time and plot them for each species.
+
+2. Calculate species richness through time?
+
+3. Calculate beta diversity (Bray) between times? Plot it as time lag on x axis and beta on y
+
+4. Run 10 new untb() simulations using the same parameter values (input to function) and calculate beta diversity between the simulations an plot against time. EG. For the 10 simulations calculate the beta diversity (bray curtis) between then 10 simulations at time step 1. Then at time step 2, then 3....finally 2500.
