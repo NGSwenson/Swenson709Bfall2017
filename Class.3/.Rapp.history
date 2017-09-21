@@ -1,0 +1,414 @@
+r = 1; alpha = 0.01; N = 1:120
+r
+alpha
+N
+plot(N, eval(growth.v.pop), type = "l", ylab = "Pop Growth Rate (dn/dt)", xlab = "N")
+arrows(20,2,80,2, length=0.1, lwd=3)#
+arrows(122,-2,109,-2,length = 0.1, lwd=3)
+abline(h = 0,col="blue")
+abline(v = 1/alpha,col="red")
+comp.coeffs = matrix(c(0.001, 0.0005,0.0001,0.002), byrow=T,nrow=2)#
+comp.coeffs
+Nt0_1 = 50#
+Nt0_2 = 25#
+r_1 = 0.8#
+r_2 = 1.0
+Nt1_1 = Nt0_1 + r_1 * Nt0_1 * (1 - comp.coeffs[1,1]*Nt0_1 - comp.coeffs[1,2] * Nt0_2)#
+Nt1_1 #
+#
+#species 2 equation for lotka-volterra#
+Nt1_2 = Nt0_2 + r_2 * Nt0_2 * (1 - comp.coeffs[2,1]*Nt0_2 - comp.coeffs[2,2] * Nt0_1)#
+Nt1_2
+lv.funk = function(N_1, N_2, coeff.mat, r_1, r_2, time.steps){#
+#
+	#empty pop size vectors#
+	pop.1 = c(NA)#
+	pop.2 = c(NA)#
+#
+	#calculate pop sizes at 1 time step after original pop size#
+	pop.1[1] = N_1 + r_1 * N_1 * (1 - coeff.mat[1,1]*N_1 - coeff.mat[1,2] * N_2)#
+	pop.2[1] = N_2 + r_2 * N_2 * (1 - coeff.mat[2,1]*N_2 - coeff.mat[2,2] * N_1)#
+#
+	#now loop from time step 2 (i) to finish each time using population size from previous time step (i-1)#
+	for(i in 2:time.steps){#
+#
+		pop.1[i] = pop.1[i-1] + r_1 * pop.1[i-1] * (1 - coeff.mat[1,1]*pop.1[i-1] - coeff.mat[1,2] * pop.2[i-1])#
+		pop.2[i] = pop.2[i-1] + r_1 * pop.2[i-1] * (1 - coeff.mat[2,1]*pop.2[i-1] - coeff.mat[2,2] * pop.1[i-1])#
+#
+	}#
+#
+#bind together as columns the two population size vectors#
+return(cbind(pop.1,pop.2))#
+}
+lv.output = lv.funk(10,12, comp.coeffs, 1.1, 1.0, 50)#
+lv.output
+plot(1:50, lv.output[,1], type = "l",col="blue")
+lines(1:50, lv.output[,2], col="red")
+#make an empty plot with a white 0,0 point and xy limits of 1000 and appropriate axis labels#
+plot(0,0,ylim=c(0,1000), xlim =c(0,1000),col="white",xlab="N1",ylab="N2")
+for(i in 2:40){ #
+	arrows(lv.output[i-1,1], lv.output[i-1,2],lv.output[i,1], lv.output[i,2], length = 0.1)    #
+}
+comp.coeffs2 = matrix(c(0.01, 0.0005,0.01,0.0002), byrow=T,nrow=2)
+comp.coeffs2
+lv.output = lv.funk(10,12, comp.coeffs2, 1.1, 1.0, 20)#
+lv.output#
+#
+#plot the ouptputs again#
+plot(1:20, lv.output[,1], type = "l",col="blue", ylim=c(0,150))#
+lines(1:20, lv.output[,2], col="red")
+#make an empty plot#
+plot(0,0,ylim=c(0,150), xlim =c(0,150),col="white",xlab="N1",ylab="N2")#
+#
+#plot trajectory arrows#
+for(i in 2:20){ #
+	arrows(lv.output[i-1,1], lv.output[i-1,2],lv.output[i,1], lv.output[i,2], length = 0.1)    #
+}
+lv.output
+#change coefficients again and run model and plot it#
+comp.coeffs3 = matrix(c(0.01, 0.005,0.01,0.002), byrow=T,nrow=2)
+comp.coeffs3
+comp.coeffs3 = matrix(c(0.01, 0.005,0.01,0.002), byrow=T,nrow=2)#
+lv.output = lv.funk(10,12, comp.coeffs3, 2.1, 2.0, 20)#
+lv.output#
+#
+plot(1:20, lv.output[,1], type = "l",col="blue", ylim=c(0,150))#
+lines(1:20, lv.output[,2], col="red")
+plot(0,0,ylim=c(0,150), xlim =c(0,150),col="white",xlab="N1",ylab="N2")#
+#
+for(i in 2:20){ #
+	arrows(lv.output[i-1,1], lv.output[i-1,2],lv.output[i,1], lv.output[i,2], length = 0.1)    #
+}
+lv.output = lv.funk(20,5, comp.coeffs3, 2.1, 2.0, 20)#
+#
+for(i in 2:20){ #
+	arrows(lv.output[i-1,1], lv.output[i-1,2],lv.output[i,1], lv.output[i,2], length = 0.1, col="blue")    #
+}
+lv.output = lv.funk(20,120, comp.coeffs3, 2.1, 2.0, 20)#
+#
+for(i in 2:20){ #
+	arrows(lv.output[i-1,1], lv.output[i-1,2],lv.output[i,1], lv.output[i,2], length = 0.1, col="red")    #
+}
+lv.funk.con = function(t,n, parms){#
+#
+	with(as.list(parms), {#
+	dn1dt = r1 * n[1] * (1-a11 * n[1] - a12 * n[2])#
+	dn2dt = r2 * n[2] * (1-a22 * n[2] - a21 * n[1])#
+	list(c(dn1dt, dn2dt))#
+	})#
+}#
+#
+parms = c(r1=1, r2=0.1, a11=0.2, a21=0.1, a22=0.02, a12 = 0.1)#
+initialN = c(2,1)#
+output = ode(y = initialN, times=1:100, func = lv.funk.con, parms = parms)
+output
+matplot(output[,1],output[,-1], type="l)
+matplot(output[,1],output[,-1], type="l")
+# run some lotka volterra simulations using the LVCompGames() from the primer package#
+#
+LVCompGames()
+lambda = 10+5
+N0 =100
+nt = lambda * N0
+nt
+nt/N0
+Nt=10
+B = 5
+D =4
+Nt1 = 10+5-4
+Nt1
+Nt1 =Nt+B-D
+Nt1
+N = 10
+B = 5
+D = 3
+B/N - D/N
+lambda = B/N - D/N
+lambda
+N*.2 + N
+for(i in 1:100){N = N*lambda + N; print(N)    }
+for(i in 1:100){N.new = N*lambda + N; print(N.new)    }
+lambda = B/N - D/N
+B
+D
+N
+N =10
+rnorm(1, mean = 0, sd=1)
+for(i in 1:100){lambda.rand =rnorm(1, mean = 0, sd=1); N = N*lambda.rand + N; return(N)    }
+N
+output.N = c(NA)
+output.N
+for(i in 1:100){#
+	lambda.rand =rnorm(1, mean = 0, sd=1) #
+	N = N*lambda.rand + N #
+	output.N[i] = N#
+	return(output.N)    #
+	}
+head(output.N)
+output
+output.N
+output.N = c(NA)#
+#
+for(i in 1:100){#
+	lambda.rand =rnorm(1, mean = 0, sd=1) #
+	N = N*lambda.rand + N #
+	output.N[i] = N#
+	return(output.N)    #
+	}
+output.N
+output.N = c(NA)#
+#
+for(i in 1:100){#
+	lambda.rand =rnorm(1, mean = 0, sd=1) #
+	N = N*lambda.rand + N #
+	output.N[i] = N#
+#	return(output.N)    #
+	}
+output.N
+plot(1:100,output.N)
+plot(1:100,output.N,type="l")
+tmp = matrix(c(replicate(rnorm(3))),nrow=3)
+tmp = matrix(c(replicate(rnorm(3),3)),nrow=3)
+tmp = matrix(c(replicate(3,rnorm(3))),nrow=3)
+tmp
+tmp = matrix(c(replicate(3,rnorm(1))),nrow=3)
+tmp
+tmp%*%tmp
+tmp%*%t(tmp)
+is.numeric(1)
+is.integer(1.4)
+test.function = function(x){#
+#
+	if(is.numeric(x) && x > 1){#
+		x = round(x)#
+		set.seed(x)#
+		tmp = matrix(c(replicate(x,rnorm(1))),nrow=x)#
+		tmp2 = tmp %*% t(tmp)#
+	}#
+	else{#
+	print("I need a numeric input")#
+	}#
+}
+test.function(10)
+test.function = function(x){#
+#
+	if(is.numeric(x) && x > 1){#
+		x = round(x)#
+		set.seed(x)#
+		tmp = matrix(c(replicate(x,rnorm(1))),nrow=x)#
+		tmp2 = tmp %*% t(tmp)#
+		return(tmp2)#
+	}#
+	else{#
+	print("I need a numeric input")#
+	}#
+}
+test.function(10)
+test.function("")
+test.function("B")
+sm.funky = function(x){#
+#
+	if(is.numeric(x)){#
+	replicate(x, "You are awesome!")#
+	}#
+#
+	else{#
+		print("I need a numeric input")#
+	}#
+}
+sm.funky(10)
+sm.funky("")
+hw.funk = function(x){#
+#
+print(paste("Hello World", x, sep=" "))#
+#
+}
+hw.funk("idiot")
+10^0
+log(1,base=10)
+10^2/3
+10^1
+10^2
+10^(2/3)
+tmp = matrix(1:27,ncol=3)
+tmp
+cor(tmp[,1],tmp[,2])
+x = tmp[,1]
+y = tmp[,2]
+cor(x,y)
+cor(tmp[1:5,1],tmp[1:5,2])
+cor(tmp[1:5,1],tmp[5:1,2])
+tmp[1:5,1]
+tmp[1:5,2]
+tmp[5:1,2]
+library(vegan)#
+library(plyr)#
+library(picante)#
+library(reshape2)#
+#
+cdm = read.csv("example.com.data2.csv",row.names=1)
+library(vegan)#
+library(plyr)#
+library(picante)#
+library(reshape2)#
+#
+cdm = read.csv("example.com.data2.csv",row.names=1)
+cdm
+cdm = read.csv("example.com.data2.csv",row.names=1)
+cdm
+cdm = read.csv("example.com.data2.csv",row.names=1)
+cmd
+cdm
+cdm
+is.numeric(cdm)
+cdm = as.matrix(cdm)
+is.numeric(cdm)
+cdm
+abund.per.com = rowSums(cdm)
+abund.per.com
+abund.per.sp = colSums(cdm)
+abund.per.sp
+hist(log(abund.per.sp))
+hist(abund.per.sp)
+cdm
+rel.abund.cdm = cdm/rowSums(cdm)
+rel.abund.cdm
+rowSums(rel.abund.cdm)
+cdm
+pa.cdm = ifelse(cdm > 0,1,0)
+pa.cdm
+sp.per.com = rowSums(pa.cdm)
+sp.per.com
+sp.oc.rate = colSums(pa.cdm)
+sp.oc.rate
+sp.oc.rate/nrow(pa.cdm)
+par(mfrow=c(2,5))
+for(i in 1:10){#
+	hist(cdm[i,])#
+}
+cdm[1,]
+for(i in 1:10){#
+	hist(cdm[i,cdm[i,] >0])#
+}
+decostand(cdm, method = "pa")
+#convert to relative abundance by dividing by total of rows#
+decostand(cdm, method = "total")
+#log transform#
+decostand(cdm, method = "log",logbase=2)
+decostand
+sample(1:5,2,replace=F)
+sample(1:5,2,replace=F)
+sample(1:5,2,replace=F)
+sample(1:5,2,replace=F)
+sample(1:5,2,replace=F)
+sample(1:5,2,replace=F)
+sample(1:5,2,replace=F)
+sample(1:5,2,replace=F)
+set.seed(52)
+sample(1:5,2,replace=F)
+sample(1:5,2,replace=F)
+sample(1:5,2,replace=F)
+set.seed(52)
+rep("sp.",300)
+paste(rep("sp.",300),sample(1:10,300,replace=T),sep="")
+tmp.sp = as.data.frame(cbind(paste(rep("sp.",300),sample(1:10,300,replace=T),sep=""),1))
+head(tmp.sp)
+rep(1:10,each=30)
+tmp.com = as.data.frame(paste( rep("com.",300),rep(1:10,each=30) , sep=""))
+head(tmp.com)
+com.dat = cbind(tmp.com, tmp.sp)
+head(com.dat)
+colnames(com.dat) = c("community","spp","present")
+head(com.dat)
+com.dat
+new.cdm = recast(com.dat,com.dat[,1]~com.dat[,2])
+new.cdm
+?recast
+rownames(new.cdm)=new.cdm[,1]
+new.cdm
+new.cdm = new.cdm[,-1]
+new.cdm
+tmp = new.cdm
+tmp
+tmp[,-"sp.10"]
+tmp[,"sp.10"]
+tmp[,-c("sp.10")]
+colnames(tmp)["sp.10"]
+colnames(tmp=="sp.10")
+which(colnames(tmp=="sp.10"))
+tmp$sp.9
+tmp$sp.9==null
+tmp$sp.9=="null"
+tmp$sp.9=NULL
+tmp
+#return it to the original style#
+new.cdm2 = cbind(rownames(new.cdm),new.cdm)
+new.cdm2
+melt(new.cdm)
+melt(new.cdm2)
+?diversity
+diversity(cdm, index="shannon")
+diversity(cdm, index="simpson")
+fisher.alpha(cdm)
+specnumber(cdm)
+rowSums(pa.cdm)
+sp.a.c. =specaccum(cdm, method="random")
+plot(sp.a.c.)
+plot(sp.a.c.)
+?vegdist
+jaccard.output = vegdist(cdm, method="jaccard")
+jaccard.output
+dim(jaccard.output)
+length(jaccard.output)
+as.matrix(jaccard.output)
+dim(as.matrix(jaccard.output))
+jaccard.output = vegdist(cdm, method="jaccard", diag=TRUE, upper = TRUE)
+jaccard.output
+bray.output = vegdist(cdm, method="bray")
+bray.output
+my.groups = factor(c(rep("rain.forest",5),rep("dry.forest",5)))
+my.groups
+my.mod = betadisper(bray.output, my.groups)
+my.mod
+plot(my.mod)
+anova(my.mod)
+permutest(my.mod, pairwise = TRUE, permutations = 999)
+my.mod.HSD = TukeyHSD(my.mod)
+my.mod.HSD
+plot(my.mod.HSD)
+plot(hclust(bray.output))
+plot(hclust(bray.output),cex=5)
+set.seed(10)#
+enviro.dat = cbind(abs(rnorm(10)), sort(abs(rnorm(10,2))) ,as.data.frame(my.groups))#
+colnames(enviro.dat) = c("soil.h2o.content", "light.levels", "forest.type")
+enviro.dat
+adonis2(cdm ~ soil.h2o.content * forest.type, data = enviro.dat)
+var.part.out=varpart(cdm,~ soil.h2o.content, ~light.levels+forest.type, data=enviro.dat)
+var.part.out
+plot(var.part.out)
+library(untb)#
+?untb
+rep(1:20,25)
+length(rep(1:20,25))
+sim = untb(start = rep(1:20,25), prob=0, gens=2500, D=9, keep=T)
+dim(sim)
+sim[100:105,]
+times = c(1,50,2500)#
+sppcolors = sapply(times,function(i) grey((sim[i,]-1)/20))#
+#
+layout(matrix(1:3,nr=1))#
+#
+par(mar=c(1,1,3,1))#
+#
+for(j in 1:3){#
+#
+plot(c(1,20), c(1,25), type="n",axes=F)#
+points(rep(1:20,25), rep(1:25,each=20), pch=19,cex=2,col=sppcolors[,j])#
+title(paste("Time = ", times[j], sep=""))#
+}
+#wrangle output into a species table through time#
+sp.tab = species.table(sim)
+sp.tab
+dim(sp.tab)
+head(sp.tab)
+head(rowSums(sp.tab))
