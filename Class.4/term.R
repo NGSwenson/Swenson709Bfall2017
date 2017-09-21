@@ -10,3 +10,4 @@ write.table(as.matrix(samp), paste(i, ".output.txt", sep=""), sep="\t",row.names
 
 
 }
+
