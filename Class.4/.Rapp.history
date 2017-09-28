@@ -1,0 +1,334 @@
+beta.out[1:4,1:4]
+plot(1:2500,beta.out[,1])
+tmp = matrix(1:25,nrow=5)
+tmp
+as.dist(tmp)
+c(as.dist(tmp))
+sim2 = replicate(untb(start = rep(1:20,25), prob=0, gens=2500, D=9, keep=T),10)
+sim2 = replicate(10,untb(start = rep(1:20,25), prob=0, gens=2500, D=9, keep=T))
+dim(sim2)
+sim2[1:4,1:4,7]
+sim2[1:4,1:4,10]
+new.cdm = rbind(sim2[1,,1],sim2[1,,2],sim2[1,,3],sim2[1,,4] )
+new.cdm
+vegdist(new.cdm)
+output.matrix = matrix(NA, nrow=2500,ncol=2)#
+#
+for(i in 1:2500){#
+new.cdm = rbind(sim2[i,,1],sim2[i,,2],sim2[i,,3],sim2[i,,4],sim2[i,,5] ,sim2[i,,6] ,sim2[i,,7] ,sim2[i,,8] ,sim2[i,,9] ,sim2[i,,10]  )#
+#
+out = vegdist(new.cdm)#
+#
+output.matrix[i,1] = mean(out,na.rm=T)#
+output.matrix[i,2] = sd(out,na.rm=T)#
+#
+}
+output.matrix
+plot(1:2500,output.matrix[,1])
+plot(1:2500,output.matrix[,2])
+dim(new.cdm)
+install.packages("ape")
+library(ape)
+tree.mess = read.tree("cluster10_1rr_MIortho2.tre")
+tree.mess = read.tree("cluster10_1rr_MIortho2.tre")
+tree.mess
+plot(tree.mess)
+plot(tree.mess,cex=10)
+plot(tree.mess,cex=5)
+plot(tree.mess,cex=3)
+tree.mess$tip.label
+?gsub
+gsub("_","",tree.mess$tip.label)
+tree.mess$tip.label
+gsub("._","",tree.mess$tip.label)
+gsub(".._","",tree.mess$tip.label)
+gsub(".*_","",tree.mess$tip.label)
+tree.mess$tip.label
+gsub("@.","",tree.mess$tip.label)
+gsub("@.*","",tree.mess$tip.label)
+gsub("@.*","_savin.time",tree.mess$tip.label)
+tree.clean = tree.mess #
+tree.clean$tip.label = gsub("@.*","_savin.time",tree.mess$tip.label)
+plot(tree.clean,cex=3)
+examp = c("yes","we","can")#
+examp
+examp = gsub("es","ou",examp)#
+examp = gsub("we","are",examp)#
+gsub("can","great",examp)
+horrible.names = c("spp_gr8", "spp_10", "spp_11r","spp_1")
+horrible.names
+gsub("\\d","",horrible.names)
+gsub("\\D","",horrible.names)
+horrible.names#
+gsub("_\\d","",horrible.names)#
+gsub("_\\d*","",horrible.names)#
+gsub("_\\d*.","",horrible.names)
+horrible.names#
+gsub("_\\d*","",horrible.names)#
+gsub("_\\d*\\D*","",horrible.names)
+horrible.names2 = c("Spp_gr8", "spp_10", "spp_11r","spp_1")#
+#
+gsub("Spp","ack",horrible.names2)#
+gsub("Spp","ack",horrible.names2,ignore.case=T)
+horrible.names2
+gsub("[[:upper:]]","i.hate.capital.letters.",horrible.names2)
+gsub("[[:upper:]]","[[:lower:]]",horrible.names2)
+gsub("[[:upper:]]","t",horrible.names2)
+matrix(c("Meliaceae","Fabaceae","fabaceae","Asteraceae"),ncol=1)
+new.tax2 = matrix(c("Meliaceae","Fabaceae","fabaceae","Asteraceae"),ncol=1)
+grep("aceae",new.tax2[,1],value=F)
+grep("aceae",new.tax2[,1],value=T)
+new.tax2 = matrix(c("Meliaceae","Fabaceae","fabaceae","Asteraceae","water"),ncol=1)
+new.tax2
+grep("aceae",new.tax2[,1],value=T)
+grep("aceae",new.tax2[,1],value=F)
+new.tax[grep("aceae",new.tax2[,1],value=F),]
+new.tax2[grep("aceae",new.tax2[,1],value=F),]
+new.tax2$dat=1:5
+new.tax2$dat=c(1:5)
+new.tax2
+new.tax2 = matrix(c("Meliaceae","Fabaceae","fabaceae","Asteraceae","water"),ncol=1)
+new.tax2$dat=c(1:5)
+new.tax2 = matrix(c("Meliaceae","Fabaceae","fabaceae","Asteraceae","water"),ncol=1)
+new.tax3 = cbind(new.tax2,1:5)
+new.tax3
+new.tax3[grep("aceae",new.tax3[,1],value=F),]
+grep("fab",new.tax2[,1],value=T)#
+#
+grep("fab",new.tax2[,1],value=F)
+new.tax2[grep("fab",new.tax2[,1],value=F),]#
+#
+new.tax2[grep("fab|mel",new.tax2[,1]),]
+new.tax2[grep("fab",new.tax2[,1],value=F),]#
+#
+new.tax3[grep("fab|mel",new.tax3[,1]),]
+new.tax2[grep("fab",new.tax2[,1],value=F),]#
+#
+new.tax3[grep("fab|Mel",new.tax3[,1]),]
+new.tax3[grep("fab|mel",new.tax3[,1]),1] = "FAMILYaceae"
+new.tax3[grep("fab|Mel",new.tax3[,1]),1] = "FAMILYaceae"
+new.tax3
+tmp = read.table("uhoh.fq")
+list.files
+list.files()
+tmp = read.table("uh_oh.fq")
+tmp = read.table("uh_oh.fq",sep="")
+tmp = read.csv("uh_oh.fq")
+tmp
+dim(tmp)
+tmp = read.csv("uh_oh.fq",header=F)
+dim(tmp)
+head(tmp)
+gsub("@K00211:448:HHVWYBBXX:3:" ,"", tmp)
+gsub("@K00211:448:HHVWYBBXX:3:" ,"", tmp[,1])
+head(tmp)
+grep("TTTT",tmp[,1],value=T)
+dim(grep("TTTT",tmp[,1],value=T))
+grep("TTTT",tmp[,1],value=F)
+tmp[grep("TTTT",tmp[,1],value=F),]
+dim(tmp[grep("TTTT",tmp[,1],value=F),])
+tmp[grep("TTTT",tmp[,1],value=F),]
+as.matrix(tmp[grep("TTTT",tmp[,1],value=F),])
+?grep
+list.files()
+tmp = runif(50)#
+#
+for(i in 1:10){#
+#
+samp = sample(tmp, 10, replace=T)#
+#
+write.table(as.matrix(samp), paste(i, ".output.txt", sep=""), sep="\t",row.names=F,col.names=F,quote=F)#
+}
+900*95
+as.integer(10.2)
+as.integer(10.5)
+as.integer(10.58)
+as.integer(10.8)
+round(10.8)
+round(10.8,digits=1)
+round(10.81,digits=1)
+round(10.85,digits=1)
+round(10.86,digits=1)
+as.double(10.8181)
+seq(from =1, to =19, by=1)
+seq(from =1, to =19, by=2)
+tmp = c(1,3,4,6)#
+tmp2 = c(1,3,10,18)#
+tmp == tmp2#
+tmp != tmp2
+tmp[tmp != tmp2]
+which(tmp != tmp2)
+which(tmp2 != tmp\)
+which(tmp2 != tmp)
+tmp[which(tmp2 != tmp)]
+tmp3 = = c(1,3,4,6)#
+identical(tmp,tmp3)
+tmp3 = c(1,3,4,6)#
+identical(tmp,tmp3)
+all.equal
+?all.equal
+?all.equal
+a = c(1.001, 5.0000001)#
+b = c(1.001, 5.0000005)#
+c = c(1.005, 5.0000005)#
+#
+all.equal(a,b, tolerance = 0)
+a = c(1.001, 5.0000001)#
+b = c(1.001, 5.0000005)#
+c = c(1.005, 5.0000005)#
+#
+all.equal(a,b)
+a = c(1.001, 5.0000001)#
+b = c(1.001, 5.0000005)#
+c = c(1.005, 5.0000005)#
+#
+all.equal(a,b,tolerance=0.000001)
+a = c(1.001, 5.0000001)#
+b = c(1.001, 5.0000005)#
+c = c(1.005, 5.0000005)#
+#
+all.equal(a,c,tolerance=0.000001)
+all.equal(a,c, tolerance = 0)
+all.equal(a,c, tolerance = 0.001)
+all.equal(a,b, tolerance = 0.001)
+all.equal(a,c, tolerance = 0.01)
+all.equal(a,c, tolerance = 0.1)
+all.equal(a,c, tolerance = 0.000001)
+all.equal(a,c,tolerance=0.000001)
+c
+a
+a = c(1.1, 1.5, 2.2, 2.8)#
+round(a)#
+ceiling(a)#
+floor(a)
+length(c("I", "really", "love","this","class"))#
+nchar(c("I", "really", "love","this","class"))#
+paste("I", "really", "love","this","class", sep=".")#
+paste("I", "really", "love","this","class", sep="RALPH")
+xx= c("I", "REally", "love","this","class"))#
+tolower(xx)
+xx= c("I", "REally", "love","this","class")#
+tolower(xx)
+toupper(xx)
+chartr("R","r",xx)
+chartr("R","r",xx)
+chartr("RE","re",xx)
+abbreviate(xx)
+abbreviate(xx,minlength=2)
+substr(xx,2,3)
+substr(xx,2,3)
+substr(xx,1,2)
+paste("I", "REally", "love","this","class", sep=".")
+yy = paste("I", "REally", "love","this","class", sep=".")
+yy
+strsplit(yy,".")
+strsplit(yy,split=".")
+yy = paste("I", "REally", "love","this","class", sep=" ")
+yy
+strsplit(yy,split=" ")
+strsplit(yy,split=" ")[[1]]
+length(strsplit(yy,split=" ")[[1]])
+yy = paste("I", "REally", "love","this","class", sep="-")
+yy
+length(strsplit(yy,split="-")[[1]])
+strsplit(yy,split="-")[[1]]
+yy = paste("I", "REally", "love","this","class", sep="-")#
+strsplit(yy,split="-")[[1]]#
+unlist(strsplit(yy,split="-"))
+com1 = c("spp.1","spp.2","spp.3")#
+com2 = c("spp.1","spp.2","spp1", "spp.55")#
+intersect(com1,com2)
+com1 = c("spp.1","spp.2","spp.3")#
+com2 = c("spp.1","spp.2","spp3", "spp.55")#
+intersect(com1,com2)
+setdiff(com1,com2)
+setdiff(com2,com1)
+union(com1,com2)
+is.element("spp.55",com2)
+is.element("spp.55",com1)
+spp.55 %in% com2
+"spp.55" %in% com2
+sort(com1)
+sort(com2)
+date()
+as.date("2017-09-28")
+install.packages("lubridate")
+library(lubridate)
+as.date("2017-09-28")
+as.Date("2017-09-28")
+?as.Date
+as.Date("09/28/2017", format = "%m/%d/%y")
+as.Date("09/28/2017", format = "%m/%d/%Y")
+y = as.Date("2017-09-28")#
+year(y)
+month(y)
+week(y)
+tz()
+tz(y)
+wday(yh)
+wday(y)
+mday(y)#
+yday(y)#
+wday(y)
+month(y,label=T)
+wday(y,label=T)
+z = as.Date("2017-10-5")#
+#
+z-y
+z = as.Date("2017-10-5")#
+#
+z-y[1]
+as.numeric(z-y)
+as.numeric(z-y)
+data.frame(c(1,1,2,"spp1","spp2","spp3"))
+data.frame(c(1,1,2,"spp1","spp2","spp3"),ncol=2)
+data.frame(c(1,1,2,"spp1","spp2","spp3"),nrow=2)
+?data.frame(c(1,1,2,"spp1","spp2","spp3"))
+data.frame(rnorm(10), rep("sp1","sp2","sp3","sp4","sp5",times=2))
+rep("sp1","sp2","sp3","sp4","sp5",times=2)
+rep(c()"sp1","sp2","sp3","sp4","sp5"),times=2)
+rep(c("sp1","sp2","sp3","sp4","sp5"),times=2)
+data.frame(rnorm(10), rep(c("sp1","sp2","sp3","sp4","sp5"),times=2))
+?data.frame(c(1,1,2,"spp1","spp2","spp3"))
+tmp = data.frame(rnorm(10), rep(c("sp1","sp2","sp3","sp4","sp5"),times=2),col.names="trait","species")
+tmp
+tmp = data.frame(rnorm(10), rep(c("sp1","sp2","sp3","sp4","sp5"),times=2))#
+colnames(tmp) = c("trait","species")
+tmp
+split(tmp,tmp$species)
+spl.tmp = split(tmp,tmp$species)#
+spl.tmp#
+spl.tmp[1]
+spl.tmp["sp3"]
+unlist(spl.tmp)
+unlist(spl.tmp,use.names=F)
+?unlist(spl.tmp)
+unlist(spl.tmp,recursive=F)
+?unlist(spl.tmp)
+lapply(spl.tmp,mean)
+lapply(spl.tmp,mean[,1])
+lapply(spl.tmp[[]][,1],mean)
+lapply(spl.tmp[,1],mean)
+lapply(spl.tmp,mean(x)[,1])
+?lapply
+lapply(spl.tmp,fun = function(x){mean(x)[,1]})
+lapply(spl.tmp,FUN = function(x){mean(x)[,1]})
+spl.tmp
+lapply(spl.tmp,FUN = function(x){mean(x$trait)})
+lapply(spl.tmp,FUN = function(x){mean(x$trait)})
+lapply(spl.tmp,FUN = function(x){max(x$trait)})
+tmp
+tapply(tmp$trait,tmp$species,FUN=mean)
+tapply(tmp$trait,tmp$species,FUN=mean)#
+tapply(tmp$trait,tmp$species,FUN=max)
+tmp
+mat = matrix(1:9,ncol=3)
+mat = matrix(1:9,ncol=3)#
+mat[2,2] = NA
+mat
+complete.cases(mat)
+mat[complete.cases(mat),]
+mat[,complete.cases(mat)]
+is.na(mat)
+!is.na(mat)
+is.na(mat)
