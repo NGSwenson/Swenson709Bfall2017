@@ -178,7 +178,6 @@ spl.tmp[1]
 spl.tmp["sp3"]
 unlist(spl.tmp)
 
-
 #summarize data in df (or matrix) using tapply and an index
 tapply(tmp$trait,tmp$species,FUN=mean)
 tapply(tmp$trait,tmp$species,FUN=max)
