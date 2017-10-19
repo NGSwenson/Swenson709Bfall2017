@@ -1,0 +1,18 @@
+Post-Hurricane Dynamics of Tropical Tree Functional Diversity
+=============================================================
+
+This code generates 50 random numbers from a normal distribution with a mean of zero and a s.d. of 1.
+
+```{r }
+
+rand.vals = rnorm(50)
+
+```
+
+Here we plot a histogram of the 50 random numbers.
+
+```{r }
+
+hist(rand.vals, col="red")
+
+```
