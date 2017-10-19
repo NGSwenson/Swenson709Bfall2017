@@ -5,6 +5,7 @@
 # Author: [Nate Swenson](http://www.swensonlab.com)
 
 A cleaner way to link to an awesome [paper][1] or a far less interesting [paper][2]
+
 [1]: http://onlinelibrary.wiley.com/doi/10.1890/11-0402.1/full
 [2]: http://rspb.royalsocietypublishing.org/content/278/1707/877
 

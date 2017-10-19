@@ -1,5 +1,4 @@
 Post-Hurricane Dynamics of Tropical Tree Functional Diversity
-
 =============================================================
 
 Author: [Nate Swenson](http://www.swensonlab.com)
