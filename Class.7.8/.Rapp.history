@@ -1,0 +1,318 @@
+sm.funky("")
+hw.funk = function(x){#
+#
+print(paste("Hello World", x, sep=" "))#
+#
+}
+hw.funk("idiot")
+10^0
+log(1,base=10)
+10^2/3
+10^1
+10^2
+10^(2/3)
+54/75
+xx= c("I", "REally", "love","this","class")#
+tolower(xx)#
+toupper(xx)#
+#
+#capitalize words function#
+simpleCap <- function(x) {#
+  s <- strsplit(x, " ")[[1]]#
+  paste(toupper(substring(s, 1,1)), substring(s, 2),#
+      sep="", collapse=" ")#
+}#
+#
+simpleCap(xx)
+yy = paste("I", "REally", "love","this","class", sep="-")#
+#
+#capitalize words function#
+simpleCap <- function(x) {#
+  s <- strsplit(x, " ")[[1]]#
+  paste(toupper(substring(s, 1,1)), substring(s, 2),#
+      sep="", collapse=" ")#
+}#
+#
+simpleCap(yy)
+yy = c("I", "REally", "love","this","class")
+simpleCap(yy)
+yy = c("I really love this class")#
+#
+#capitalize words function#
+simpleCap <- function(x) {#
+  s <- strsplit(x, " ")[[1]]#
+  paste(toupper(substring(s, 1,1)), substring(s, 2),#
+      sep="", collapse=" ")#
+}#
+#
+simpleCap(yy)
+substr(xx,2,3)#
+substr(xx,1,2)
+a <- c(1:9)
+a
+b <- LETTERS
+b
+as.integer(10.8)
+round(10.8)
+round(10.81,digits=1)
+round(10.81,digits=2)
+a = c(1.1, 1.5, 2.2, 2.8)
+a
+round(a)
+ceiling(a)
+floor(a)
+as.numeric(10.81)
+is.numeric(10.81)
+seq(from=1, to =19, by=1)
+seq(from=1, to =19, by=2)
+seq(from=1, to =19, by=3)
+seq(1, 19, by=3)
+rep(1:3,times=1)#
+rep(1:3,times=2)
+rep(1:3,times=1)#
+rep(1:3,times=2,each=2)
+a = 9#
+b = 8#
+c = 8
+aa == b
+a == b
+a != b
+a !> b
+a > b
+a < b
+tmp = c(1,3,4,6)#
+tmp2 = c(1,3,10,18)
+tmp
+tmp2
+tmp == tmp2
+tmp != tmp2
+tmp[!= tmp2]
+tmp[tmp != tmp2]
+which(tmp != tmp)
+which(tmp != tmp2)
+tmp[which(tmp != tmp2)
+]
+identical(tmp,tmp2)
+tmp3 = c(1,3,4,6)#
+identical(tmp,tmp3)
+a = c(1.001, 5.0000001)#
+b = c(1.001, 5.0000005)#
+c = c(1.005, 5.0000005)
+a
+b
+c
+c = c(1.005, 5.0000005)
+c
+all.equal(a,b, tolerance = 0)
+all.equal(a,c, tolerance = 0)
+all.equal(a,b, tolerance = 0.001)
+all.equal(a,c, tolerance = 0.001)
+all.equal(a,b,tolerance=0.000001)
+all.equal(a,c,tolerance=0.000001)
+length(c("I", "REally", "love","this","class"))
+nchar(c("I", "REally", "love","this","class"))
+paste("I", "REally", "love","this","class", sep=".")#
+paste("I", "REally", "love","this","class", sep="RALPH")
+a
+paste("I", "REally", "love","this","class", sep=".")#
+paste(a, "REally", "love","this","class", sep="RALPH")
+xx= c("I", "REally", "love","this","class")#
+tolower(xx)#
+toupper(xx)
+yy = c("I really love this class")
+yy
+#capitalize words function#
+simpleCap <- function(x) {#
+  s <- strsplit(x, " ")[[1]]#
+  paste(toupper(substring(s, 1,1)), substring(s, 2),#
+      sep="", collapse=" ")#
+}
+simpleCap(yy)
+qq=simpleCap(yy)
+qq
+tolower(qq)
+#capitalize words function#
+simpleCap <- function(x) {#
+  s <- strsplit(x, " ")[[1]]#
+  paste(tolower(substring(s, 1,1)), substring(s, 2),#
+      sep="", collapse=" ")#
+}
+simpleCap(qq)
+xx
+#change a specific character or run of characters#
+chartr("R","r",xx)
+chartr("RE","re",xx)
+simpleCap
+xx
+substr(xx,2,3)
+substr(xx,1,2)
+substr(xx,1)
+substr(xx,1,1)
+?substring
+yy = paste("I", "REally", "love","this","class", sep="-")
+yy
+#string together words with "-"#
+strsplit(yy,split="-")
+#string together words with "-"#
+strsplit(yy,split="-")[[1]]
+unlist(strsplit(yy,split="-"))
+#make two vectors of word elements#
+com1 = c("spp.1","spp.2","spp.3")#
+com2 = c("spp.1","spp.2","spp3", "spp.55")
+com1
+com2
+intersect(com1,com2)
+union(com1,com2)
+setdiff(com1,dom2)
+setdiff(com1,com2)
+com1
+com2
+union(com1,com2)
+intersect(com1,com2)
+setdiff(com1,com2)
+setdiff(com2,com1)
+my.jaccard = intersect(com1,com2)/union(com1,com2)
+my.jaccard = length(intersect(com1,com2))/length(union(com1,com2))
+my.jaccard
+intersect(com1,com2)
+is.element("spp.55",com2)#
+is.element("spp.55",com1)
+com1
+com2
+"spp.55" %in% com2
+sort(com1)
+sort(com2)
+as.Date("2017-09-28")
+as.Date("09/28/2017", format = "%m/%d/%Y")
+?as.Date
+as.Date("09/28/2017", format = "%m/%d/%y")
+date()
+Date()
+print(date())
+library("lubridate")
+date()
+y = as.Date("2017-09-28")
+y
+year(y)
+month(y)
+week(y)
+yday(y)
+mday(y)
+wday(y)
+month(y,label=T)
+wday(y,label=T)
+z = as.Date("2017-10-5")#
+z-y
+z = as.Date("2021-10-5")#
+z-y
+as.numeric(z-y)
+tmp = data.frame(rnorm(10), rep(c("sp1","sp2","sp3","sp4","sp5"),times=2))
+tmp
+rep(c("sp1","sp2","sp3","sp4","sp5"),times=2)
+colnames(tmp) = c("trait","species")
+tmp
+tmp[tmp$species == sp5,]
+tmp(species == sp5,)
+tmp[tmp$species == "sp5",]
+subset(tmp,tmp$species=="sp5")
+tmp
+subset(tmp,tmp$species=="sp5")
+split(tmp, tmp$species)
+tmp2 = split(tmp, tmp$species)
+dim(tmp2)
+length(tmp2)
+tmp2$sp2
+tmp2[[2]]
+tmp2[[3]]
+tmp2$sp1$trait
+tmp2$sp1
+tmp2$sp1[,1]
+tmp2$[[1]][,1]
+tmp2[[1]][,1]
+unlist(tmp2)
+length(unlist(tmp2))
+unsplit(tmp2,"species")
+unsplit(tmp2,"trait")
+unsplit(tmp2)
+unsplit(tmp2,tmp2[,2])
+unsplit(tmp2,tmp2[,1])
+tmp
+tapply(tmp$trait, tmp$species, mean)
+tapply(tmp$trait, tmp$species, mean, na.rm=T)
+tapply(tmp$trait, tmp$species, max, na.rm=T)
+tmp2
+lapply(tmp2, mean)
+lapply(tmp2, FUN = function(x){mean(x$trait)})
+lapply(tmp2, mean(x))
+lapply(tmp2, mean(x$trait))
+mat = matrix(1:9,ncol=3)#
+mat[2,2] = NA
+mat
+mat = matrix(1:9,ncol=3)
+mat
+mat = matrix(1:9,ncol=3)#
+mat[2,2] = NA
+mat
+is.na(mat)#
+!is.na(mat)
+complete.cases(mat)
+?complete.cases(mat)
+mat[complete.cases(mat),]
+mat[,complete.cases(mat)]
+mat = matrix(1:9,ncol=3)#
+mat[2,3] = NA
+mat
+complete.cases(mat)
+complete.cases(mat,2)
+complete.cases(mat)
+complete.cases(t(mat))
+mat[complete.cases(mat),]
+mat[,complete.cases(t(mat))]
+library(FD)
+library(picante)
+pd
+6000/96
+50*1200
+50*800
+50*400
+5000/96
+800/96
+96*8
+600*50
+install.packages("knitr")
+library(knitr)
+knit2html("Knit.Example.1.Rmd")
+knit2html("Knit.Example.2.Rmd")
+knit2html("Knit.Example.2.Rmd")
+knit2html("Knit.Example.2.Rmd")
+knit2html("Knit.Example.2.Rmd")
+knit2html("Knit.Example.2.Rmd")
+knit2html("Knit.Example.2.Rmd")
+knit2html("Knit.Example.2.Rmd")
+knit2html("Knit.Example.2.Rmd")
+knit2html("Knit.Example.2.Rmd")
+knit2html("Knit.Example.2.Rmd")
+knit2html("Knit.Example.2.Rmd")
+knit2html("Knit.Example.2.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2pdf("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.3.Rmd")
