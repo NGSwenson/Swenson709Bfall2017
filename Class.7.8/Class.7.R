@@ -8,7 +8,6 @@ library(vegan)
 library(picante)
 library(lefse)
 
-
 data(lefse.sample)
 
 lefse.sample
@@ -51,7 +50,6 @@ jack.sr = function(one.com){
 	return(sr.dist)
 }
 
-jack.sr(vec.com.1)
 
 output.srs = apply(lefse.sample,1,jack.sr)
 boxplot(output.srs[,1:5])
@@ -140,5 +138,7 @@ hist(nulls[2,1,])
 abline(v=obs.jac[2,1],col="red")
 
 rank(c(obs.jac[2,1], nulls[2,1,]))[1]
+
+
 
 

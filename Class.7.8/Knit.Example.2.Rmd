@@ -18,7 +18,9 @@ Here we plot a histogram of the 50 random numbers.
 hist(rand.vals, col="red")
 
 ```
+
 Here we are generating 50 random numbers from a normal distribution, but because we set eval=F it does not run the R code and causes downstream calculations to fail.
+
 
 ```{r eval=F}
 

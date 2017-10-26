@@ -1,318 +1,502 @@
-sm.funky("")
-hw.funk = function(x){#
-#
-print(paste("Hello World", x, sep=" "))#
-#
+tmp
+apply(tmp,2, function(x){rep(names(x),each=x)})
+apply(tmp,2, function(x){rep(colnames(x),each=x)})
+apply(tmp,1, function(x){rep(names(x),each=x)})
+tmp
+dim(tmp)
+names(tmp)
+x
+tmp
+sapply(tmp, function(x){rep(names(x),each=x)})
+?sapply()
+is.vector(tmp)
+sapply(c(tmp), function(x){rep(names(x),each=x)})
+rep.int(colnames(lefse.sample[1,lefse.sample[1,]>0]),times=c(lefse.sample[1,lefse.sample[1,]>0]))
+tmp
+com.1 = lefse.sample[1,lefse.sample[1,]>0]#
+vec.com.1 = rep.int(colnames(com.1),times=c(com.1))
+vec.com.1
+min.abund = min(rowSums(lefse.sample))
+sample(vec.com.1, min.abund,replace=F)
+one.sample = sample(vec.com.1, min.abund,replace=F)#
+length(unique(one.sample))
+one.sample
+one.sample = sample(vec.com.1, min.abund,replace=F)#
+length(unique(one.sample))
+jack.funk = function(x){#
+a.sample = sample(vec.com.1, min.abund,replace=F)#
+sr.sample = length(unique(a.sample))#
+return(sr.sample)#
 }
-hw.funk("idiot")
-10^0
-log(1,base=10)
-10^2/3
-10^1
-10^2
-10^(2/3)
-54/75
-xx= c("I", "REally", "love","this","class")#
-tolower(xx)#
-toupper(xx)#
+jack.funk = function(x){#
+a.sample = sample(x, min.abund,replace=F)#
+sr.sample = length(unique(a.sample))#
+return(sr.sample)#
+}
+jack.funk(vec.com.1)
+replicate(100,jack.funk(vec.com.1))
+hist(replicate(100,jack.funk(vec.com.1)))
+replicate(1000,jack.funk(x)))
+hist(replicate(1000,jack.funk(x)))
+hist(replicate(1000,jack.funk(vec.com.1)))
+hist(replicate(10000,jack.funk(vec.com.1)))
+jack.sr = function(one.com){#
 #
-#capitalize words function#
-simpleCap <- function(x) {#
-  s <- strsplit(x, " ")[[1]]#
-  paste(toupper(substring(s, 1,1)), substring(s, 2),#
-      sep="", collapse=" ")#
+jack.sub.funk = function(one.com){#
+a.sample = sample(one.com, min.abund,replace=F)#
+sr.sample = length(unique(a.sample))#
+return(sr.sample)#
 }#
 #
-simpleCap(xx)
-yy = paste("I", "REally", "love","this","class", sep="-")#
+sr.dist = replicate(100,jack.funk(one.com))#
+return(sr.dist)#
+}
+jack.sr(one.com)
+jack.sr(vec.com.1)
+jack.sr = function(one.com){#
 #
-#capitalize words function#
-simpleCap <- function(x) {#
-  s <- strsplit(x, " ")[[1]]#
-  paste(toupper(substring(s, 1,1)), substring(s, 2),#
-      sep="", collapse=" ")#
+	jack.sub.funk = function(one.com){#
+		a.sample = sample(one.com, min.abund,replace=F)#
+		sr.sample = length(unique(a.sample))#
+		return(sr.sample)#
+	}#
+#
+	sr.dist = replicate(1000,jack.funk(one.com))#
+	return(sr.dist)#
+}
+jack.sr(vec.com.1)
+jack.sr = function(one.com){#
+#
+	jack.sub.funk = function(one.com){#
+		a.sample = sample(one.com, min.abund,replace=F)#
+		sr.sample = length(unique(a.sample))#
+		return(sr.sample)#
+	}#
+#
+	sr.dist = replicate(100,jack.funk(one.com))#
+	return(sr.dist)#
 }#
 #
-simpleCap(yy)
-yy = c("I", "REally", "love","this","class")
-simpleCap(yy)
-yy = c("I really love this class")#
+jack.sr(vec.com.1)#
 #
-#capitalize words function#
-simpleCap <- function(x) {#
-  s <- strsplit(x, " ")[[1]]#
-  paste(toupper(substring(s, 1,1)), substring(s, 2),#
-      sep="", collapse=" ")#
+apply(lefse.sample,1,jack.sr)
+min.abund
+lefse.sample
+rowSums(lefse.sample)
+first.sample = sample(vec.com.1, min.abund,replace=F)
+rm(one.sample)
+first.sample = sample(vec.com.1, min.abund,replace=F)#
+length(unique(one.sample))#
+#
+jack.funk = function(x){#
+a.sample = sample(x, min.abund,replace=F)#
+sr.sample = length(unique(a.sample))#
+return(sr.sample)#
 }#
 #
-simpleCap(yy)
-substr(xx,2,3)#
-substr(xx,1,2)
-a <- c(1:9)
-a
-b <- LETTERS
-b
-as.integer(10.8)
-round(10.8)
-round(10.81,digits=1)
-round(10.81,digits=2)
-a = c(1.1, 1.5, 2.2, 2.8)
-a
-round(a)
-ceiling(a)
-floor(a)
-as.numeric(10.81)
-is.numeric(10.81)
-seq(from=1, to =19, by=1)
-seq(from=1, to =19, by=2)
-seq(from=1, to =19, by=3)
-seq(1, 19, by=3)
-rep(1:3,times=1)#
-rep(1:3,times=2)
-rep(1:3,times=1)#
-rep(1:3,times=2,each=2)
-a = 9#
-b = 8#
-c = 8
-aa == b
-a == b
-a != b
-a !> b
-a > b
-a < b
-tmp = c(1,3,4,6)#
-tmp2 = c(1,3,10,18)
-tmp
-tmp2
-tmp == tmp2
-tmp != tmp2
-tmp[!= tmp2]
-tmp[tmp != tmp2]
-which(tmp != tmp)
-which(tmp != tmp2)
-tmp[which(tmp != tmp2)
-]
-identical(tmp,tmp2)
-tmp3 = c(1,3,4,6)#
-identical(tmp,tmp3)
-a = c(1.001, 5.0000001)#
-b = c(1.001, 5.0000005)#
-c = c(1.005, 5.0000005)
-a
-b
-c
-c = c(1.005, 5.0000005)
-c
-all.equal(a,b, tolerance = 0)
-all.equal(a,c, tolerance = 0)
-all.equal(a,b, tolerance = 0.001)
-all.equal(a,c, tolerance = 0.001)
-all.equal(a,b,tolerance=0.000001)
-all.equal(a,c,tolerance=0.000001)
-length(c("I", "REally", "love","this","class"))
-nchar(c("I", "REally", "love","this","class"))
-paste("I", "REally", "love","this","class", sep=".")#
-paste("I", "REally", "love","this","class", sep="RALPH")
-a
-paste("I", "REally", "love","this","class", sep=".")#
-paste(a, "REally", "love","this","class", sep="RALPH")
-xx= c("I", "REally", "love","this","class")#
-tolower(xx)#
-toupper(xx)
-yy = c("I really love this class")
-yy
-#capitalize words function#
-simpleCap <- function(x) {#
-  s <- strsplit(x, " ")[[1]]#
-  paste(toupper(substring(s, 1,1)), substring(s, 2),#
-      sep="", collapse=" ")#
+hist(replicate(10000,jack.funk(vec.com.1)))#
+jack.sr = function(one.com){#
+#
+	jack.sub.funk = function(one.com){#
+		a.sample = sample(one.com, min.abund,replace=F)#
+		sr.sample = length(unique(a.sample))#
+		return(sr.sample)#
+	}#
+#
+	sr.dist = replicate(100,jack.funk(one.com))#
+	return(sr.dist)#
+}#
+#
+jack.sr(vec.com.1)#
+#
+apply(lefse.sample,1,jack.sr)
+apply(lefse.sample,1,jack.sr)
+vec.com.1
+jack.sr = function(one.com){#
+	vec.com = rep.int(colnames(one.com),times=c(one.com))#
+	jack.sub.funk = function(vec.com){#
+		a.sample = sample(vec.com, min.abund,replace=F)#
+		sr.sample = length(unique(a.sample))#
+		return(sr.sample)#
+	}#
+#
+	sr.dist = replicate(100,jack.funk(vec.com))#
+	return(sr.dist)#
+}#
+#
+#jack.sr(vec.com.1)#
+#
+apply(lefse.sample,1,jack.sr)
+jack.sr = function(one.com){#
+	one.com = one.com[onc.com>0]#
+	vec.com = rep.int(colnames(one.com),times=c(one.com))#
+	jack.sub.funk = function(vec.com){#
+		a.sample = sample(vec.com, min.abund,replace=F)#
+		sr.sample = length(unique(a.sample))#
+		return(sr.sample)#
+	}#
+#
+	sr.dist = replicate(100,jack.funk(vec.com))#
+	return(sr.dist)#
+}#
+#
+#jack.sr(vec.com.1)#
+#
+apply(lefse.sample,1,jack.sr)
+jack.sr = function(one.com){#
+	one.com = one.com[one.com>0]#
+	vec.com = rep.int(colnames(one.com),times=c(one.com))#
+	jack.sub.funk = function(vec.com){#
+		a.sample = sample(vec.com, min.abund,replace=F)#
+		sr.sample = length(unique(a.sample))#
+		return(sr.sample)#
+	}#
+#
+	sr.dist = replicate(100,jack.funk(vec.com))#
+	return(sr.dist)#
+}#
+#
+#jack.sr(vec.com.1)#
+#
+apply(lefse.sample,1,jack.sr)
+jack.sr = function(one.com){#
+	one.com = one.com[one.com>0]#
+	print(one.com)#
+	vec.com = rep.int(colnames(one.com),times=c(one.com))#
+	jack.sub.funk = function(vec.com){#
+		a.sample = sample(vec.com, min.abund,replace=F)#
+		sr.sample = length(unique(a.sample))#
+		return(sr.sample)#
+	}#
+#
+	sr.dist = replicate(100,jack.funk(vec.com))#
+	return(sr.dist)#
+}#
+#
+#jack.sr(vec.com.1)#
+#
+apply(lefse.sample,1,jack.sr)
+jack.sr = function(one.com){#
+	one.com = one.com[one.com>0]#
+	print(one.com)#
+	vec.com = rep.int(names(one.com),times=c(one.com))#
+	jack.sub.funk = function(vec.com){#
+		a.sample = sample(vec.com, min.abund,replace=F)#
+		sr.sample = length(unique(a.sample))#
+		return(sr.sample)#
+	}#
+#
+	sr.dist = replicate(100,jack.funk(vec.com))#
+	return(sr.dist)#
+}#
+#
+#jack.sr(vec.com.1)#
+#
+apply(lefse.sample,1,jack.sr)
+jack.sr = function(one.com){#
+	one.com = one.com[one.com>0]#
+	vec.com = rep.int(names(one.com),times=c(one.com))#
+	jack.sub.funk = function(vec.com){#
+		a.sample = sample(vec.com, min.abund,replace=F)#
+		sr.sample = length(unique(a.sample))#
+		return(sr.sample)#
+	}#
+#
+	sr.dist = replicate(100,jack.funk(vec.com))#
+	return(sr.dist)#
+}#
+#
+#jack.sr(vec.com.1)#
+#
+apply(lefse.sample,1,jack.sr)
+output.srs = apply(lefse.sample,1,jack.sr)
+boxplot(output.srs[,1:5]~1:5)
+boxplot(output.srs[,1:5])
+apply(output.srs,2,quantile)
+apply(output.srs,2,quantile(x,0.95))
+apply(output.srs,2,function(x) quantile(x,0.95)})
+apply(output.srs,2,function(x) quantile(x,0.95))
+apply(output.srs,2,function(x) quantile(x,c(0.025,0.975))
+)
+apply(output.srs,2,function(x) quantile(x,c(0.025,0.5,0.975)))
+quants = apply(output.srs,2,function(x) quantile(x,c(0.025,0.5,0.975)))
+plot(1:ncol(quants),quants[2,])
+plot(1:ncol(quants),quants[2,],ylim=c(0,max(quants+1)))
+lines(1:ncol(quants), 1:ncol(quants),quants[1,],quants[3,])
+?lines
+lines(c(1:ncol(quants), 1:ncol(quants)),c(quants[1,],quants[3,]))
+plot(1:ncol(quants),quants[2,],ylim=c(0,max(quants+1)))
+plot(rep.int(1:ncol(quants),times=2),ylim=c(0,max(quants+1)))
+plot(1:ncol(quants),quants[2,],ylim=c(0,max(quants+1)))
+lines(rep.int(1:ncol(quants),times=2),c(quants[1,],quants[3,]))
+rep.int(1:ncol(quants),times=2
+)
+lines(rep(1:ncol(quants),each=2),c(quants[1,],quants[3,]))
+plot(1:ncol(quants),quants[2,],ylim=c(0,max(quants+1)))
+for(i in 1:ncol(quants)){#
+#
+	lines(rep(i,2),quants[1,i], quants[1,2])#
+#
 }
-simpleCap(yy)
-qq=simpleCap(yy)
-qq
-tolower(qq)
-#capitalize words function#
-simpleCap <- function(x) {#
-  s <- strsplit(x, " ")[[1]]#
-  paste(tolower(substring(s, 1,1)), substring(s, 2),#
-      sep="", collapse=" ")#
+for(i in 1:ncol(quants)){#
+#
+	lines(rep(i,2),c(quants[1,i], quants[1,2]))#
+#
 }
-simpleCap(qq)
-xx
-#change a specific character or run of characters#
-chartr("R","r",xx)
-chartr("RE","re",xx)
-simpleCap
-xx
-substr(xx,2,3)
-substr(xx,1,2)
-substr(xx,1)
-substr(xx,1,1)
-?substring
-yy = paste("I", "REally", "love","this","class", sep="-")
-yy
-#string together words with "-"#
-strsplit(yy,split="-")
-#string together words with "-"#
-strsplit(yy,split="-")[[1]]
-unlist(strsplit(yy,split="-"))
-#make two vectors of word elements#
-com1 = c("spp.1","spp.2","spp.3")#
-com2 = c("spp.1","spp.2","spp3", "spp.55")
-com1
-com2
-intersect(com1,com2)
-union(com1,com2)
-setdiff(com1,dom2)
-setdiff(com1,com2)
-com1
-com2
-union(com1,com2)
-intersect(com1,com2)
-setdiff(com1,com2)
-setdiff(com2,com1)
-my.jaccard = intersect(com1,com2)/union(com1,com2)
-my.jaccard = length(intersect(com1,com2))/length(union(com1,com2))
-my.jaccard
-intersect(com1,com2)
-is.element("spp.55",com2)#
-is.element("spp.55",com1)
-com1
-com2
-"spp.55" %in% com2
-sort(com1)
-sort(com2)
-as.Date("2017-09-28")
-as.Date("09/28/2017", format = "%m/%d/%Y")
-?as.Date
-as.Date("09/28/2017", format = "%m/%d/%y")
-date()
-Date()
-print(date())
-library("lubridate")
-date()
-y = as.Date("2017-09-28")
-y
-year(y)
-month(y)
-week(y)
-yday(y)
-mday(y)
-wday(y)
-month(y,label=T)
-wday(y,label=T)
-z = as.Date("2017-10-5")#
-z-y
-z = as.Date("2021-10-5")#
-z-y
-as.numeric(z-y)
-tmp = data.frame(rnorm(10), rep(c("sp1","sp2","sp3","sp4","sp5"),times=2))
-tmp
-rep(c("sp1","sp2","sp3","sp4","sp5"),times=2)
-colnames(tmp) = c("trait","species")
-tmp
-tmp[tmp$species == sp5,]
-tmp(species == sp5,)
-tmp[tmp$species == "sp5",]
-subset(tmp,tmp$species=="sp5")
-tmp
-subset(tmp,tmp$species=="sp5")
-split(tmp, tmp$species)
-tmp2 = split(tmp, tmp$species)
-dim(tmp2)
-length(tmp2)
-tmp2$sp2
-tmp2[[2]]
-tmp2[[3]]
-tmp2$sp1$trait
-tmp2$sp1
-tmp2$sp1[,1]
-tmp2$[[1]][,1]
-tmp2[[1]][,1]
-unlist(tmp2)
-length(unlist(tmp2))
-unsplit(tmp2,"species")
-unsplit(tmp2,"trait")
-unsplit(tmp2)
-unsplit(tmp2,tmp2[,2])
-unsplit(tmp2,tmp2[,1])
-tmp
-tapply(tmp$trait, tmp$species, mean)
-tapply(tmp$trait, tmp$species, mean, na.rm=T)
-tapply(tmp$trait, tmp$species, max, na.rm=T)
-tmp2
-lapply(tmp2, mean)
-lapply(tmp2, FUN = function(x){mean(x$trait)})
-lapply(tmp2, mean(x))
-lapply(tmp2, mean(x$trait))
-mat = matrix(1:9,ncol=3)#
-mat[2,2] = NA
-mat
-mat = matrix(1:9,ncol=3)
-mat
-mat = matrix(1:9,ncol=3)#
-mat[2,2] = NA
-mat
-is.na(mat)#
-!is.na(mat)
-complete.cases(mat)
-?complete.cases(mat)
-mat[complete.cases(mat),]
-mat[,complete.cases(mat)]
-mat = matrix(1:9,ncol=3)#
-mat[2,3] = NA
-mat
-complete.cases(mat)
-complete.cases(mat,2)
-complete.cases(mat)
-complete.cases(t(mat))
-mat[complete.cases(mat),]
-mat[,complete.cases(t(mat))]
-library(FD)
+quants
+for(i in 1:ncol(quants)){#
+#
+	lines(rep(i,2),c(quants[1,i], quants[3,i]))#
+#
+}
+c(quants[1,1], quants[3,1])
+plot(1:ncol(quants),quants[2,],ylim=c(0,max(quants+1)))#
+#
+for(i in 1:ncol(quants)){#
+#
+	lines(rep(i,2),c(quants[1,i], quants[3,i]))#
+#
+}
+quants
+text(1,6,"A")
+text(1,7,"A")
+quants = apply(output.srs,2,function(x) quantile(x,c(0.025,0.5,0.975)))#
+#
+plot(1:ncol(quants),quants[2,],ylim=c(0,max(quants+1)))#
+#
+for(i in 1:ncol(quants)){#
+#
+	lines(rep(i,2),c(quants[1,i], quants[3,i]))#
+#
+}#
+text(1,7,"A")#
+text(2,7,"A")#
+text(3,7,"B")#
+text(4,7,"C")#
+text(4,7,"C")
+text(5,7,"C")
+lefse.sample
+.9*6
+(13/14)*6
+(13/14)*12
+(.9)*12
+(.9)*13
+(..8)*12
+(.8)*12
+(8/9)*12
+(8/9)*13
+(7/8)*13
+14*10
+9*12
+140-108
+pa.samp = decostand(lefse.sample, method="pa")
+library(vegan)
+pa.samp = decostand(lefse.sample, method="pa")
+pa.samp
+colSums(pa.samp)
+length(colSums(pa.samp)>0)
+length(colSums(pa.samp[1:3,])>0)
+colSums(pa.samp[1:3,])
+colSums(pa.samp[1:3,])>0
+sum(colSums(pa.samp[1:3,])>0)
+pseudo.val.1 = (ncol(pa.samp)*nrow(pa.samp)) - ((nrow(pa.samp)-1)*(sum(colSums(pa.samp[-1,])>0)))
+pseudo.val.1
+pseudos = matrix(NA,nrow=1,ncol=nrow(pa.samp))#
+for(i in 1:nrow(pa.samp)){#
+#
+	pseudos[,i] = (ncol(pa.samp)*nrow(pa.samp)) - ((nrow(pa.samp)-1)*(sum(colSums(pa.samp[-i,])>0)))#
+#
+}
+pseudos
+pa.samp
+mean(pseudos)
+pa.samp
+vegdist(pa.samp)
+vegdist(pa.samp,method="jaccard")
+??randomize matrix
+??randomizematrix
 library(picante)
-pd
-6000/96
-50*1200
-50*800
-50*400
-5000/96
-800/96
-96*8
-600*50
-install.packages("knitr")
+randomizeMatrix(pa.sam)
+randomizeMatrix(pa.samp)
+randomizeMatrix(pa.samp,null.model="independentswap")
+vegdist(randomizeMatrix(pa.samp,null.model="independentswap"),method="jaccard")
+vegdist(randomizeMatrix(pa.samp,null.model="independentswap"),method="jaccard")[2]
+vegdist(randomizeMatrix(pa.samp,null.model="independentswap"),method="jaccard")[3]
+as.matrix(vegdist(randomizeMatrix(pa.samp,null.model="independentswap"),method="jaccard"))
+as.matrix(vegdist(randomizeMatrix(pa.samp,null.model="independentswap"),method="jaccard"))[,2,1]
+as.matrix(vegdist(randomizeMatrix(pa.samp,null.model="independentswap"),method="jaccard"))[2,1]
+replicate(as.matrix(vegdist(randomizeMatrix(pa.samp,null.model="independentswap"),method="jaccard")),50)
+replicate(50,as.matrix(vegdist(randomizeMatrix(pa.samp,null.model="independentswap"),method="jaccard")))
+replicate(5,as.matrix(vegdist(randomizeMatrix(pa.samp,null.model="independentswap"),method="jaccard")))
+nulls = replicate(1000,as.matrix(vegdist(randomizeMatrix(pa.samp,null.model="independentswap"),method="jaccard")))
+hist(nulls[2,1,])
+abline(v=obs.jac[2,1],col="red")
+obs.jac = as.matrix(vegdist(pa.samp,method="jaccard"))
+abline(v=obs.jac[2,1],col="red")
+rank(obs.jac[2,1], nulls[2,1,])[1]
+rank(obs.jac[2,1], nulls[2,1,])[2]
+rank(obs.jac[2,1], nulls[2,1,])
+?rank
+rank(c(obs.jac[2,1], nulls[2,1,]))[2]
+rank(c(obs.jac[2,1], nulls[2,1,]))[1]
+rank(c(obs.jac[2,1], nulls[2,1,]))[3]
+rank(c(obs.jac[2,1], nulls[2,1,]))[4]
+rank(c(obs.jac[2,1], nulls[2,1,]))[5]
+head(nulls[2,1])
+head(nulls[2,1,])
+obs.jac
+rank(c(obs.jac[2,1], nulls[2,1,]))[1]
+alpha.diversities = c(10,20,32,31,22,38,10,28,2,44,55,61,31,13,12,15,18,20,22)#
+#
+boot.s = sample(alpha.diversities, 10, replace=T)
+boot.s
+alpha.diversities = c(10,20,32,31,22,38,10,28,2,44,55,61,31,13,12,15,18,20,22)#
+mean.alpha = mean(alpha.diversities)#
+sd.alpha = sd(alpha.diversities)#
+#
+boot.s = sample(alpha.diversities, 10, replace=T)#
+mean(boot.s)#
+sd(boot.s)
+mean.alpha
+sd.alpha
+boot.1000 = replicate(1000,mean(sample(alpha.diversities, 10, replace=T)))
+boot.1000
+hist(boot.1000)
+abline(v=mean.alpha,col="red")
 library(knitr)
-knit2html("Knit.Example.1.Rmd")
-knit2html("Knit.Example.2.Rmd")
-knit2html("Knit.Example.2.Rmd")
-knit2html("Knit.Example.2.Rmd")
-knit2html("Knit.Example.2.Rmd")
-knit2html("Knit.Example.2.Rmd")
-knit2html("Knit.Example.2.Rmd")
-knit2html("Knit.Example.2.Rmd")
-knit2html("Knit.Example.2.Rmd")
-knit2html("Knit.Example.2.Rmd")
-knit2html("Knit.Example.2.Rmd")
-knit2html("Knit.Example.2.Rmd")
-knit2html("Knit.Example.2.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2pdf("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
-knit2html("Knit.Example.3.Rmd")
+knit2html("Knit.Example.1.Rmd","output.1.html")
+knit2html("Knit.Example.2.Rmd","output.2.html")
+knit2html("Knit.Example.3.Rmd","output.3.html")
+library(vegan)#
+library(picante)#
+library(lefse)#
+#
+data(lefse.sample)
+lefse.sample
+min(rowSums(lefse.sample))
+lefse.sample[1,lefse.sample[1,]>0]
+c(lefse.sample[1,lefse.sample[1,]>0])
+rep.int(colnames(lefse.sample[1,lefse.sample[1,]>0]),times=c(lefse.sample[1,lefse.sample[1,]>0]))
+min.abund = min(rowSums(lefse.sample))#
+com.1 = lefse.sample[1,lefse.sample[1,]>0]
+com.1
+vec.com.1 = rep.int(colnames(com.1),times=c(com.1))
+vec.com.1
+first.sample = sample(vec.com.1, min.abund,replace=F)
+first.sample
+unique(first.sample)
+length(unique(first.sample))
+jack.funk = function(x){#
+	a.sample = sample(x, min.abund,replace=F)#
+	sr.sample = length(unique(a.sample))#
+	return(sr.sample)#
+}#
+#
+hist(replicate(10000,jack.funk(vec.com.1)))
+jack.sr = function(one.com){#
+	one.com = one.com[one.com>0]#
+	vec.com = rep.int(names(one.com),times=c(one.com))#
+	jack.sub.funk = function(vec.com){#
+		a.sample = sample(vec.com, min.abund,replace=F)#
+		sr.sample = length(unique(a.sample))#
+		return(sr.sample)#
+	}#
+#
+	sr.dist = replicate(100,jack.funk(vec.com))#
+	return(sr.dist)#
+}#
+#
+jack.sr(vec.com.1)
+jack.sr = function(one.com){#
+	one.com = one.com[one.com>0]#
+	vec.com = rep.int(names(one.com),times=c(one.com))#
+	jack.sub.funk = function(vec.com){#
+		a.sample = sample(vec.com, min.abund,replace=F)#
+		sr.sample = length(unique(a.sample))#
+		return(sr.sample)#
+	}#
+#
+	sr.dist = replicate(100,jack.funk(vec.com))#
+	return(sr.dist)#
+}#
+output.srs = apply(lefse.sample,1,jack.sr)
+output.srs
+boxplot(output.srs[,1:5])
+apply(output.srs,2,quantile)
+apply(output.srs,2,function(x) quantile(x,c(0.025,0.5,0.975)))
+quants = apply(output.srs,2,function(x) quantile(x,c(0.025,0.5,0.975)))
+quants
+plot(1:ncol(quants),quants[2,],ylim=c(0,max(quants+1)))
+for(i in 1:ncol(quants)){#
+#
+	lines(rep(i,2),c(quants[1,i], quants[3,i]))#
+#
+}
+text(1,7,"A")#
+text(2,7,"A")#
+text(3,7,"B")#
+text(4,7,"C")#
+text(5,7,"C")
+alpha.diversities = c(10,20,32,31,22,38,10,28,2,44,55,61,31,13,12,15,18,20,22)
+alphas.diversities
+alpha.diversities
+mean.alpha = mean(alpha.diversities)
+mean.alpha
+sd.alpha = sd(alpha.diversities)
+sd
+sd.alpha
+boot.s = sample(alpha.diversities, 10, replace=T)
+boot.s
+mean(boot.s)
+boot.1000 = replicate(1000,mean(sample(alpha.diversities, 10, replace=T)))
+boot.1000
+hist(boot.1000)
+abline(v=mean.alpha,col="red")
+hist(alpha.diversities)
+hist(boot.1000)
+abline(v=mean.alpha,col="red")
+pa.samp = decostand(lefse.sample, method="pa")
+pa.samp
+colSums(pa.samp[-1,])>0
+colSums(pa.samp[-4,])>0
+sum(colSums(pa.samp[-1,])>0))
+sum(colSums(pa.samp[-1,])>0)
+sum(colSums(pa.samp[-4,])>0)
+pseudo.val.1 = (ncol(pa.samp)*nrow(pa.samp)) - ((nrow(pa.samp)-1)*(sum(colSums(pa.samp[-1,])>0)))
+pseudo.val.1
+pseudos = matrix(NA,nrow=1,ncol=nrow(pa.samp))
+for(i in 1:nrow(pa.samp)){#
+#
+	pseudos[,i] = (ncol(pa.samp)*nrow(pa.samp)) - ((nrow(pa.samp)-1)*(sum(colSums(pa.samp[-i,])>0)))#
+#
+}
+pseudos
+pa.samp
+mean(pseudos)
+sd(pseudos)
+vegdist(pa.samp,method="jaccard")
+pa.samp
+obs.jac = as.matrix(vegdist(pa.samp,method="jaccard"))
+obs.jac
+randomizeMatrix(pa.samp,null.model="independentswap")
+pa.samp
+replicate(5,as.matrix(vegdist(randomizeMatrix(pa.samp,null.model="independentswap"),method="jaccard")))
+nulls = replicate(1000,as.matrix(vegdist(randomizeMatrix(pa.samp,null.model="independentswap"),method="jaccard")))
+dim(nulls)
+nulls[,,1]
+hist(nulls[2,1,])
+abline(v=obs.jac[2,1],col="red")
+obs.jac
+rnorm(5)
+tmp=rnorm(5)
+tmp
+rank(tmp)
+rank(tmp)[1]
+rank(c(obs.jac[2,1], nulls[2,1,]))[1]
+780.5/1001
+1001*.975
+1001*.025
+evaluate_call
+evaluate_call()
+??evaluate_call()
+version

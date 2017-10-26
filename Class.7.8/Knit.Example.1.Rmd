@@ -16,3 +16,4 @@ Here we plot a histogram of the 50 random numbers.
 hist(rand.vals, col="red")
 
 ```
+
